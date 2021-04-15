@@ -1,0 +1,31 @@
+{
+    "products": [
+        {
+            "attributes": {
+                "type": "Product__c",
+                "referenceId": "Product__cRef1"
+            },
+            "Name": "example a",
+            "Category__c": "sport",
+            "Price__c": 80
+        },
+        {
+            "attributes": {
+                "type": "Product__c",
+                "referenceId": "Product__cRef2"
+            },
+            "Name": "example b",
+            "Category__c": "street",
+            "Price__c": 54
+        },
+        {
+            "attributes": {
+                "type": "Product__c",
+                "referenceId": "Product__cRef2"
+            },
+            "Name": "example c",
+            "Category__c": "outdoor",
+            "Price__c": 100
+        }
+    ]
+}

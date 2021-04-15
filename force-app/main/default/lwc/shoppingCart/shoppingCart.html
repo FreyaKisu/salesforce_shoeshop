@@ -1,0 +1,24 @@
+<template>
+    <div id="waiting" if:false={ready}>Loading…</div>
+	<div id="display" if:true={ready}>
+    <lightning-card title="EventWithData" icon-name="custom:custom9">
+        <lightning-layout class="slds-m-around_medium">
+            <lightning-layout-item>
+                <template if:true={listIsNotEmpty}>
+                    <template for:each={products.data} for:item="product">
+                        <c-product-list-item key={product.Id} product={product} onselected={productSelected}></c-product-list-item>
+                    </template>
+                </template>
+            </lightning-layout-item>
+            <lightning-layout-item class="slds-m-left_medium">
+                <template if:true={selectedProduct}>
+                    <p>{selectedProduct.Name}</p>
+                    <p>{selectedProduct.Price}</p>
+                </template>
+            </lightning-layout-item>
+            <lightning:button label="Order" iconName="custom:custom40" iconPosition="left" 
+            variant="brand" title="Brand action" onclick="{! c.placeOrder }"/>
+        </lightning-layout>
+    </lightning-card>
+    </div>
+</template>

@@ -1,0 +1,25 @@
+<template>
+	<div id="waiting" if:false={ready}>Loading…</div>
+	<div id="display" if:true={ready}>
+		<div>Name: {name}</div>
+		<div>Price: {price}</div>
+		<div>Category: <lightning-badge label={category}></lightning-badge></div>
+        <lightning:button label="Add to Cart" iconName="utility:add" iconPosition="left" 
+         variant="brand" title="Brand action" onclick="{! c.addToCart }"/>
+	</div>
+    <lightning-card title="Products" icon-name="standard:buyer_account">
+        <ul class="slds-m-around_medium">
+            <template iterator:it={products}>
+                <li key={it.value.Id}>
+                    <div if:true={it.first} class="list-first"></div>
+                    <div>Name: {it.value.Name}</div>
+                    <div>Price: {it.value.Price}</div>
+                    <div>Category: <lightning-badge label={it.value.Category}></lightning-badge></div>
+                    <lightning:button label="Add to Cart" iconName="utility:add" iconPosition="left" 
+                    variant="brand" title="Brand action" onclick="{! c.addToCart }"/>
+                    <div if:true={it.last} class="list-last"></div>
+                </li>
+            </template>
+        </ul>
+    </lightning-card>
+</template>
